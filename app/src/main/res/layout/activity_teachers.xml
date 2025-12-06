@@ -7,64 +7,63 @@
     android:layout_height="match_parent"
     tools:context=".TeachersActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvTeachers"
-        android:layout_width="403dp"
-        android:layout_height="547dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="60dp"
-        android:contentDescription="Description of the image for accessibility"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/textViewTeacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Professores"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.473"
-        tools:itemCount="8"
-        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/list_teacher" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollViewTeachers"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnGoMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTeacher">
+
+        <TextView
+            android:id="@+id/tvTeachersList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_textview"
+            android:padding="16dp"
+            android:text=""
+            android:textSize="16sp" />
+    </ScrollView>
 
     <Button
         android:id="@+id/btnGoMain"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
         android:layout_marginBottom="40dp"
         android:backgroundTint="#00008B"
         android:text="Voltar"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rcvTeachers" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBarTeachers"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/rcvTeachers"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollViewTeachers"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewTeacher"
-        android:layout_width="142dp"
-        android:layout_height="27dp"
-        android:text="Professores"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/rcvTeachers"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/scrollViewTeachers" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

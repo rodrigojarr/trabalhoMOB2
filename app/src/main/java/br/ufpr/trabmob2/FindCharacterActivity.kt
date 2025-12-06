@@ -17,12 +17,8 @@ import com.bumptech.glide.Glide
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-
 class FindCharacterActivity : AppCompatActivity() {
     private lateinit var progressbar: ProgressBar
-    private lateinit var characterFactApi: CharacterFactApi
     private lateinit var ids: List<String>
 
     @SuppressLint("CutPasteId")
@@ -40,14 +36,10 @@ class FindCharacterActivity : AppCompatActivity() {
         val nameCharacter = findViewById<TextView>(R.id.nameCharacterId)
         val houseCharacter = findViewById<TextView>(R.id.houseCharacterId)
 
-        val retrofit = Retrofit.Builder().baseUrl("https://hp-api.onrender.com/api/").
-        addConverterFactory(GsonConverterFactory.create()).build()
-        characterFactApi = retrofit.create(CharacterFactApi::class.java)
-
         lifecycleScope.launch {
             try {
                 val allcharacter = withContext(Dispatchers.IO){
-                    characterFactApi.getCharacters()
+                    ApiClient.characterFactApi.getCharacters()
                 }
                 ids = allcharacter.map { it.id }
             } catch (ex: Exception){
@@ -70,7 +62,7 @@ class FindCharacterActivity : AppCompatActivity() {
                 lifecycleScope.launch {
                     try {
                         val character = withContext(Dispatchers.IO){
-                            characterFactApi.findCharacterById(inputId)
+                            ApiClient.characterFactApi.findCharacterById(inputId)
                         }
                         Glide.with(this@FindCharacterActivity)
                             .load(character[0].image)
