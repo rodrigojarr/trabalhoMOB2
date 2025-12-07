@@ -5,78 +5,105 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/hp_background"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnClose"
-        android:layout_width="317dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="100dp"
-        android:layout_weight="1"
-        android:backgroundTint="#8B0000"
-        android:text="Sair"
-        android:textSize="18sp"
-        android:textStyle="bold"
+    <!-- Main Content Card - Vertically Centered -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mainCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/hp_surface"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnListStudents" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
 
-    <Button
-        android:id="@+id/btnListStudents"
-        android:layout_width="317dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="40dp"
-        android:layout_weight="1"
-        android:backgroundTint="#00008B"
-        android:text="Listar Estudantes"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnListTeacher" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
 
-    <Button
-        android:id="@+id/btnListTeacher"
-        android:layout_width="317dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="40dp"
-        android:layout_weight="1"
-        android:backgroundTint="#00008B"
-        android:text="Listar Professores"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnListCharacterId" />
+            <!-- App Title -->
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Harry Potter App"
+                android:textAlignment="center"
+                android:textColor="@color/hp_primary"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.02" />
 
-    <Button
-        android:id="@+id/btnListCharacterId"
-        android:layout_width="317dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="180dp"
-        android:layout_weight="1"
-        android:backgroundTint="#00008B"
-        android:text="Listar Personagem"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:text="Explore o mundo mágico"
+                android:textAlignment="center"
+                android:textColor="@color/hp_text_secondary"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif" />
 
-    <TextView
-        android:id="@+id/tvTitulo"
-        android:layout_width="126dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="40dp"
-        android:text="HP App"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <!-- Search Character Button -->
+            <Button
+                android:id="@+id/btnListCharacterId"
+                style="@style/HPButton.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Buscar Personagem"
+                android:textAlignment="center" />
+
+            <!-- Teachers Button -->
+            <Button
+                android:id="@+id/btnListTeacher"
+                style="@style/HPButton.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Professores de Hogwarts"
+                android:textAlignment="center" />
+
+            <!-- Students Button -->
+            <Button
+                android:id="@+id/btnListStudents"
+                style="@style/HPButton.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:text="Estudantes por Casa"
+                android:textAlignment="center" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="24dp"
+                android:background="@color/hp_divider" />
+
+            <!-- Exit Button -->
+            <Button
+                android:id="@+id/btnClose"
+                style="@style/HPButton.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sair"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

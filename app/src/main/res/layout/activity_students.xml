@@ -5,75 +5,157 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/hp_background"
     tools:context=".StudentsActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvHouses"
-        android:layout_width="409dp"
-        android:layout_height="465dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="2dp"
-        android:contentDescription="Description of the image for accessibility"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <!-- Header -->
+    <View
+        android:id="@+id/headerBackground"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:background="@color/hp_primary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.473"
-        tools:itemCount="8"
-        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/list_house" />
-
-    <Button
-        android:id="@+id/btnGoMain"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:backgroundTint="#00008B"
-        android:text="Voltar"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rcvHouses" />
-
-    <Button
-        android:id="@+id/btnGoStudents"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:backgroundTint="#00008B"
-        android:text="Ver Estudantes"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rcvHouses" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/rcvHouses"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewHouse"
-        android:layout_width="183dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="48dp"
-        android:text="Escolas"
+        android:id="@+id/tvTitle"
+        style="@style/HPText.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:text="Escolha uma Casa"
         android:textAlignment="center"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/rcvHouses"
+        android:textColor="@color/hp_text_on_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Content Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/contentCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/hp_surface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerBackground">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    style="@style/HPText.Subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Selecione uma casa de Hogwarts" />
+
+                <!-- House Selection -->
+                <RadioGroup
+                    android:id="@+id/radioGroupHouses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp">
+
+                    <!-- Gryffindor -->
+                    <RadioButton
+                        android:id="@+id/radioGryffindor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/hp_surface_variant"
+                        android:buttonTint="@color/gryffindor_primary"
+                        android:elevation="2dp"
+                        android:padding="16dp"
+                        android:text="Gryffindor"
+                        android:textColor="@color/hp_text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Slytherin -->
+                    <RadioButton
+                        android:id="@+id/radioSlytherin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/hp_surface_variant"
+                        android:buttonTint="@color/slytherin_primary"
+                        android:elevation="2dp"
+                        android:padding="16dp"
+                        android:text="Slytherin"
+                        android:textColor="@color/hp_text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Ravenclaw -->
+                    <RadioButton
+                        android:id="@+id/radioRavenclaw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/hp_surface_variant"
+                        android:buttonTint="@color/ravenclaw_primary"
+                        android:elevation="2dp"
+                        android:padding="16dp"
+                        android:text="Ravenclaw"
+                        android:textColor="@color/hp_text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Hufflepuff -->
+                    <RadioButton
+                        android:id="@+id/radioHufflepuff"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/hp_surface_variant"
+                        android:buttonTint="@color/hufflepuff_primary"
+                        android:elevation="2dp"
+                        android:padding="16dp"
+                        android:text="Hufflepuff"
+                        android:textColor="@color/hp_text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/btnGoStudents"
+                    style="@style/HPButton.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Ver Estudantes" />
+
+                <Button
+                    android:id="@+id/btnGoMain"
+                    style="@style/HPButton.Outlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Voltar" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
