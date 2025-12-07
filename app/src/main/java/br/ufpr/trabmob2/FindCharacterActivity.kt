@@ -82,10 +82,11 @@ class FindCharacterActivity : AppCompatActivity() {
                                 Glide.with(this@FindCharacterActivity)
                                     .load(char.image)
                                     .placeholder(R.color.hp_surface_variant)
-                                    .error(R.color.hp_surface_variant)
+                                    .error(R.drawable.ic_image_error)
                                     .into(ivCharacterImage)
                             } else {
-                                ivCharacterImage.setImageResource(android.R.color.transparent)
+                                // Show error drawable if no image URL is provided
+                                ivCharacterImage.setImageResource(R.drawable.ic_image_error)
                                 ivCharacterImage.setBackgroundColor(getColor(R.color.hp_surface_variant))
                             }
                             

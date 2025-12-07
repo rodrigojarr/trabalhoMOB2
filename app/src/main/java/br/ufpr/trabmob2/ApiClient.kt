@@ -11,7 +11,7 @@ import javax.net.ssl.X509TrustManager
 object ApiClient {
     private const val BASE_URL = "https://hp-api.onrender.com/api/"
 
-    private val unsafeOkHttpClient: OkHttpClient by lazy {
+    val unsafeOkHttpClient: OkHttpClient by lazy {
         try {
             // Create a trust manager that does not validate certificate chains
             val trustAllCerts = arrayOf<TrustManager>(object : X509TrustManager {
