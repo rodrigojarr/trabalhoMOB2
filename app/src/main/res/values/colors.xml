@@ -1,5 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Modern Harry Potter Theme - Flat Design with High Contrast -->
+    
+    <!-- Primary Colors - WCAG AA Compliant -->
+    <color name="hp_primary">#9C1B1E</color> <!-- Gryffindor Red - Modern, vibrant -->
+    <color name="hp_primary_dark">#6D1315</color>
+    <color name="hp_primary_light">#C62828</color>
+    
+    <!-- Secondary Colors -->
+    <color name="hp_secondary">#FFC107</color> <!-- Gold - Bright and accessible -->
+    <color name="hp_secondary_dark">#FFA000</color>
+    <color name="hp_secondary_light">#FFECB3</color>
+    
+    <!-- House Colors - Vibrant and Modern -->
+    <color name="gryffindor_primary">#9C1B1E</color>
+    <color name="gryffindor_accent">#FFC107</color>
+    
+    <color name="slytherin_primary">#1B5E20</color>
+    <color name="slytherin_accent">#C0C0C0</color>
+    
+    <color name="ravenclaw_primary">#0D47A1</color>
+    <color name="ravenclaw_accent">#8D6E63</color>
+    
+    <color name="hufflepuff_primary">#F57F17</color>
+    <color name="hufflepuff_accent">#424242</color>
+    
+    <!-- Background Colors - Clean and Modern -->
+    <color name="hp_background">#FAFAFA</color> <!-- Light gray, not pure white -->
+    <color name="hp_surface">#FFFFFF</color>
+    <color name="hp_surface_variant">#F5F5F5</color>
+    
+    <!-- Dark Theme -->
+    <color name="hp_background_dark">#121212</color>
+    <color name="hp_surface_dark">#1E1E1E</color>
+    <color name="hp_surface_variant_dark">#2C2C2C</color>
+    
+    <!-- Text Colors - High Contrast for Accessibility -->
+    <color name="hp_text_primary">#212121</color> <!-- Almost black -->
+    <color name="hp_text_secondary">#757575</color> <!-- Medium gray -->
+    <color name="hp_text_on_primary">#FFFFFF</color>
+    <color name="hp_text_on_secondary">#000000</color>
+    
+    <!-- Dark Theme Text -->
+    <color name="hp_text_primary_dark">#FFFFFF</color>
+    <color name="hp_text_secondary_dark">#B0B0B0</color>
+    
+    <!-- Accent and Status Colors -->
+    <color name="hp_accent">#FFC107</color>
+    <color name="hp_success">#4CAF50</color>
+    <color name="hp_error">#F44336</color>
+    <color name="hp_warning">#FF9800</color>
+    <color name="hp_info">#2196F3</color>
+    
+    <!-- Dividers and Borders -->
+    <color name="hp_divider">#E0E0E0</color>
+    <color name="hp_divider_dark">#3C3C3C</color>
+    
+    <!-- Legacy Colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

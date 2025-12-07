@@ -23,7 +23,7 @@ class TeachersActivity : AppCompatActivity() {
 
         val btnGoMain = findViewById<Button>(R.id.btnGoMain)
         tvTeachersList = findViewById(R.id.tvTeachersList)
-        progressbar = findViewById(R.id.progressBarTeachers)
+        progressbar = findViewById(R.id.progressBarListTeachers)
         progressbar.visibility = android.view.View.VISIBLE
 
         lifecycleScope.launch {
